@@ -29,7 +29,7 @@ class ViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
 //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                let mvc = storyboard.instantiateViewController(withIdentifier: "MainView") as! MainViewController
 //                self.view.window?.rootViewController = mvc
-////                self.present(mvc, animated: false, completion: nil)
+//          self.present(mvc, animated: false, completion: nil)
 //            }
         
 //*************************************************//
