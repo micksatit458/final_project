@@ -23,6 +23,7 @@
 		000441BD2435BAFC0090A944 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000441BC2435BAFC0090A944 /* CollectionViewCell.swift */; };
 		00549E852435BDD800B76CB0 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00549E842435BDD800B76CB0 /* addViewController.swift */; };
 		00549E872435C03400B76CB0 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00549E862435C03400B76CB0 /* detailViewController.swift */; };
+		00549E892435E14A00B76CB0 /* commentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00549E882435E14A00B76CB0 /* commentViewController.swift */; };
 		65D31C3D3FA7EAE913EA9FB3 /* Pods_tradeFinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA5A4A6013330BD087D1C10D /* Pods_tradeFinalUITests.framework */; };
 		794E25A41F2CEF8528787571 /* Pods_tradeFinal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE528F644AB78AAD8ADB2D2 /* Pods_tradeFinal.framework */; };
 		922D8448663177DD7AEE93FF /* Pods_tradeFinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F515C6F2CAF5E3FA63225CD6 /* Pods_tradeFinalTests.framework */; };
@@ -68,6 +69,7 @@
 		000441BC2435BAFC0090A944 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		00549E842435BDD800B76CB0 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		00549E862435C03400B76CB0 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		00549E882435E14A00B76CB0 /* commentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commentViewController.swift; sourceTree = "<group>"; };
 		53BD919A01A5D9E93C49E334 /* Pods-tradeFinalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tradeFinalTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tradeFinalTests/Pods-tradeFinalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A1C5D9A6FBAB09155651071 /* Pods-tradeFinal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tradeFinal.release.xcconfig"; path = "Pods/Target Support Files/Pods-tradeFinal/Pods-tradeFinal.release.xcconfig"; sourceTree = "<group>"; };
 		8B8F667BF6731AB882F174D4 /* Pods-tradeFinalUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tradeFinalUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tradeFinalUITests/Pods-tradeFinalUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		000441712435B0530090A944 = {
 			isa = PBXGroup;
 			children = (
+				00549E882435E14A00B76CB0 /* commentViewController.swift */,
 				0004417C2435B0530090A944 /* tradeFinal */,
 				000441932435B0560090A944 /* tradeFinalTests */,
 				0004419E2435B0560090A944 /* tradeFinalUITests */,
@@ -455,6 +458,7 @@
 				000441822435B0540090A944 /* ViewController.swift in Sources */,
 				0004417E2435B0530090A944 /* AppDelegate.swift in Sources */,
 				000441BD2435BAFC0090A944 /* CollectionViewCell.swift in Sources */,
+				00549E892435E14A00B76CB0 /* commentViewController.swift in Sources */,
 				000441BB2435B7310090A944 /* signupViewController.swift in Sources */,
 				000441802435B0540090A944 /* SceneDelegate.swift in Sources */,
 				000441B52435B3A80090A944 /* MainViewController.swift in Sources */,
