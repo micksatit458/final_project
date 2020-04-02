@@ -12,10 +12,81 @@ import FirebaseAuth
 import FirebaseFirestore
 import LocalAuthentication
 import AVFoundation
+import GoogleSignIn
 
 public var auth = Auth.auth()
 
-class ViewController: UIViewController {
+
+
+class ViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+       
+//            if let error = error {
+//                print("\(error.localizedDescription)")
+//            } else {
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let mvc = storyboard.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+//                self.view.window?.rootViewController = mvc
+////                self.present(mvc, animated: false, completion: nil)
+//            }
+        
+//*************************************************//
+        
+//        if (error == nil) {
+//           let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                         let mvc = self.storyboard?.instantiateViewController(identifier: "MainView") as! MainViewController
+//
+//          //                            mvc.productList = self.productList
+//          //                            mvc.productName = self.productName
+//          //
+//          //                               if self.productList.count > 0 {
+//                                                 self.view.window?.rootViewController = mvc
+//        } else {
+//          print("\(error.localizedDescription)")
+//        }
+//*************************************************//
+        
+        if let error = error {
+        print(error.localizedDescription)
+        return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
+        if let error = error {
+        print(error.localizedDescription)
+        } else {
+            print("Login Successful.")
+           if (GIDSignIn.sharedInstance().hasAuthInKeychain()){
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mvc = storyboard.instantiateViewController(withIdentifier: "MainView") as! MainViewController
+            self.view.window?.rootViewController = mvc
+//            self.present(mvc, animated: true, completion: nil)
+           }
+            
+        //This is where you should add the functionality of successful login
+        //i.e. dismissing this view or push the home view controller etc
+            let user = Auth.auth().currentUser
+                   if user?.uid == nil {
+                   //Show Login Screen
+                   }
+                   else {
+                   //Show content
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                                      let mvc = self.storyboard?.instantiateViewController(identifier: "MainView") as! MainViewController
+                                                      
+                       //                            mvc.productList = self.productList
+                       //                            mvc.productName = self.productName
+                       //
+                       //                               if self.productList.count > 0 {
+                                                              self.view.window?.rootViewController = mvc
+                   }
+        }
+    }
+    }
+    
     
        var productList:Dictionary = [String:[String:Any]]()
        var productName:Array = [String]()
@@ -31,6 +102,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     
     
+    
+    @IBAction func btnLogoutG(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            GIDSignIn.sharedInstance()?.signOut()
+            print("Sign Out")
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
     @IBAction func btnLogin(_ sender: Any) {
                
                DispatchQueue.main.async {
@@ -39,6 +122,7 @@ class ViewController: UIViewController {
                        Auth.auth().signIn(withEmail: self.txtUser.text!, password: self.txtPass.text!) { (user,error) in
                            if error != nil {
                                print(error.debugDescription)
+                            AlertView.instance.showAlert(title: "Error", message: "You are wrong Email or Password pls re-check again", alertType: .failure)
                            }
                            else {
                                print("Login Successfully")
@@ -56,6 +140,7 @@ class ViewController: UIViewController {
 //                                       self.btnLogin(self.btnLogin as Any)
 //                                       print(self.productList)
 //                               }
+                             AlertView.instance.showAlert(title: "Success", message: "You are succesfully loged into the system.", alertType: .success)
                            }
                        }
                    }
@@ -91,16 +176,10 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-//        let context : LAContext = LAContext()
-//        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil){
-//            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message") { (good, error) in
-//                if good {
-//                    print("Hello my friend")
-//                }else{
-//                    print("Can't login")
-//                }
-//            }
+//        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().uiDelegate = self
         }
 //        let sound = Bundle.main.path(forResource: "sake", ofType: "mp3")
 //        do{

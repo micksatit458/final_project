@@ -44,8 +44,8 @@ class addViewController: UIViewController {
                                     
                                       
                                   }
-            self.createAlert(title: "Your product has been added", message: "Congrats")
                               }
+            
                               }
                 
                     
@@ -85,17 +85,17 @@ class addViewController: UIViewController {
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                   let mvc = self.storyboard?.instantiateViewController(identifier: "MainView") as! MainViewController
                                      self.view.window?.rootViewController = mvc
-                    
                 }
+                AlertView.instance.showAlert(title: "Success", message: "Your product has been added", alertType: .success)
             }
         }
     
-    func createAlert (title:String, message:String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func createAlert (title:String, message:String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//    }
     
 //    override func viewDidAppear(_ animated: Bool) {
 //        createAlert(title: "Your product has been added!", message: "Congrats")

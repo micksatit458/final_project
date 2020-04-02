@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseStorage
+import LocalAuthentication
 
 class detailViewController: UIViewController {
     
@@ -37,6 +38,16 @@ class detailViewController: UIViewController {
     }
     
     @IBAction func btnTrade(_ sender: Any) {
+                let context : LAContext = LAContext()
+                if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil){
+                    context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Message") { (good, error) in
+                        if good {
+                            print("Hello my friend")
+                        }else{
+                            print("Can't login")
+                        }
+                    }
+        }
     }
     
      func readData(){

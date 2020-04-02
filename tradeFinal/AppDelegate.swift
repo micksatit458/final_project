@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-               let db = Firestore.firestore()
-               print(db)
+        let db = Firestore.firestore()
+        print(db)
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
         // Override point for customization after application launch.
         return true
     }
+    
+    func application(application: UIApplication,
+                   openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
 
+    var flag: Bool = false
+
+        if let googlePlusFlag: Bool = GIDSignIn.sharedInstance().handle(url as URL, sourceApplication: sourceApplication!, annotation: annotation) {
+      flag = googlePlusFlag
+    }
+
+    return flag
+    }
+    
+    
+    
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let handled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    return handled
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

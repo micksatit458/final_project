@@ -10,6 +10,10 @@ pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+pod 'GoogleSignIn'
+pod 'MessageKit'
+pod 'Firebase/Firestore'
+pod 'SDWebImage'
 pod "UPCarouselFlowLayout"
 
   # Pods for tradeFinal
