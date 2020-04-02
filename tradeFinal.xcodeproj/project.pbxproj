@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0004417A2435B0530090A944 /* tradeFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tradeFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0004417A2435B0530090A944 /* tradeFinal2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tradeFinal2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0004417D2435B0530090A944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0004417F2435B0540090A944 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		000441812435B0540090A944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		0004417B2435B0530090A944 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0004417A2435B0530090A944 /* tradeFinal.app */,
+				0004417A2435B0530090A944 /* tradeFinal2.app */,
 				000441902435B0560090A944 /* tradeFinalTests.xctest */,
 				0004419B2435B0560090A944 /* tradeFinalUITests.xctest */,
 			);
@@ -230,7 +230,7 @@
 			);
 			name = tradeFinal;
 			productName = tradeFinal;
-			productReference = 0004417A2435B0530090A944 /* tradeFinal.app */;
+			productReference = 0004417A2435B0530090A944 /* tradeFinal2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0004418F2435B0560090A944 /* tradeFinalTests */ = {
@@ -684,7 +684,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mick.tradeFinal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = tradeFinal2;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -702,7 +702,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mick.tradeFinal;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = tradeFinal2;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
