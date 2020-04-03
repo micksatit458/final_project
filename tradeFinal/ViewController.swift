@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import LocalAuthentication
-import AVFoundation
+//import AVFoundation
 import GoogleSignIn
 
 public var auth = Auth.auth()
