@@ -13,6 +13,4 @@ class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var productName: UILabel!
     
-    
-    //super valentine
 }
