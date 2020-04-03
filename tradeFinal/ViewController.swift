@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import LocalAuthentication
-import AVFoundation
+//import AVFoundation
 import GoogleSignIn
 
 public var auth = Auth.auth()
@@ -29,7 +29,7 @@ class ViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
 //                let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                let mvc = storyboard.instantiateViewController(withIdentifier: "MainView") as! MainViewController
 //                self.view.window?.rootViewController = mvc
-////                self.present(mvc, animated: false, completion: nil)
+//          self.present(mvc, animated: false, completion: nil)
 //            }
         
 //*************************************************//
@@ -122,7 +122,7 @@ class ViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
                        Auth.auth().signIn(withEmail: self.txtUser.text!, password: self.txtPass.text!) { (user,error) in
                            if error != nil {
                                print(error.debugDescription)
-                            AlertView.instance.showAlert(title: "Error", message: "You are wrong Email or Password pls re-check again", alertType: .failure)
+//                            AlertView.instance.showAlert(title: "Error", message: "You are wrong Email or Password pls re-check again", alertType: .failure)
                            }
                            else {
                                print("Login Successfully")
@@ -140,7 +140,7 @@ class ViewController: UIViewController,GIDSignInDelegate,GIDSignInUIDelegate {
 //                                       self.btnLogin(self.btnLogin as Any)
 //                                       print(self.productList)
 //                               }
-                             AlertView.instance.showAlert(title: "Success", message: "You are succesfully loged into the system.", alertType: .success)
+//                             AlertView.instance.showAlert(title: "Success", message: "You are succesfully loged into the system.", alertType: .success)
                            }
                        }
                    }
