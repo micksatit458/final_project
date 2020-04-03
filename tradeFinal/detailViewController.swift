@@ -113,3 +113,8 @@ class detailViewController: UIViewController {
 
 
 }
+
+
+
+
+//แก้ไขจากคนที่สอง//
