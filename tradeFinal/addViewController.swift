@@ -165,3 +165,4 @@ class addViewController: UIViewController {
 
 
 //add
+//ทดสอบการอัพขึ้นโดนJame
