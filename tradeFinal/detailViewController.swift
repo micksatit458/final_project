@@ -111,5 +111,10 @@ class detailViewController: UIViewController {
     }
     */
 
-
+    //super
 }
+
+
+
+
+
